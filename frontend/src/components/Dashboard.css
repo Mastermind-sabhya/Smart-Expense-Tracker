@@ -1,0 +1,190 @@
+.dashboard-page {
+  background-color: #0b0f19;
+  color: #ffffff;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Subtle 3D Background Blobs */
+.dashboard-page .bg-blob {
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(74, 108, 247, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+  border-radius: 50%;
+  z-index: 0;
+  animation: float-bg 20s infinite alternate ease-in-out;
+}
+
+.dashboard-page .blob-1 { top: -100px; left: -100px; }
+.dashboard-page .blob-2 { bottom: -100px; right: -100px; background: radial-gradient(circle, rgba(147, 51, 234, 0.15) 0%, rgba(0, 0, 0, 0) 70%); }
+
+@keyframes float-bg {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(60px, 40px) scale(1.1); }
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 400;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-links a:hover {
+  color: #4a6cf7;
+  text-shadow: 0 0 8px rgba(74, 108, 247, 0.6);
+}
+
+.nav-links button {
+  background: rgba(255, 77, 77, 0.15);
+  border: 1px solid rgba(255, 77, 77, 0.3);
+  color: #ff4d4d;
+  padding: 8px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav-links button:hover {
+  background: #ff4d4d;
+  color: white;
+  box-shadow: 0 0 15px rgba(255, 77, 77, 0.4);
+}
+
+/* Main Layout */
+.main-layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  padding: 50px 8%;
+  perspective: 1000px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Side Image */
+.side-image {
+  width: 280px;
+  text-align: center;
+  position: sticky;
+  top: 120px;
+  flex-shrink: 0;
+}
+
+.side-image img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
+  animation: float-img 4s ease-in-out infinite;
+}
+
+@keyframes float-img {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.side-image h3 { margin-top: 25px; font-size: 1.5rem; color: #fff; }
+.side-image p { color: #94a3b8; font-size: 0.95rem; }
+
+/* Container & Cards */
+.main-layout .container {
+  flex: 1;
+  max-width: 700px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+  position: relative;
+  z-index: 1;
+}
+
+.card:hover {
+  transform: translateY(-10px) rotateX(2deg);
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* Form Elements */
+h3 { margin-bottom: 20px; font-weight: 600; letter-spacing: 0.5px; }
+
+input, select {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
+input:focus, select:focus {
+  border-color: #4a6cf7;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.card button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 15px;
+  border: none;
+  background: linear-gradient(135deg, #4a6cf7 0%, #7c3aed 100%);
+  color: white;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 8px 20px rgba(74, 108, 247, 0.3);
+}
+
+.card button:hover {
+  transform: scale(1.02);
+  filter: brightness(1.1);
+  box-shadow: 0 12px 25px rgba(74, 108, 247, 0.5);
+}
+
+.result-text {
+  margin-top: 15px;
+  font-weight: 500;
+  color: #4ade80; /* Success Green */
+  text-align: center;
+}

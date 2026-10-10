@@ -1,0 +1,116 @@
+.login-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 3D Animated Background */
+.login-page .background-animation {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(270deg, #1a2a6c, #b21f1f, #fdbb2d);
+  background-size: 600% 600%;
+  animation: gradientMove 12s ease infinite;
+  z-index: -1;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Login Card */
+.login-page .container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  width: 360px;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  transition: 0.4s;
+}
+
+.login-page .container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+}
+
+.login-page .container h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.login-page .subtitle {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+/* Inputs */
+.login-page .input-box {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.login-page .input-box label {
+  font-size: 14px;
+  color: #444;
+}
+
+.login-page .input-box input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: 0.3s;
+}
+
+.login-page .input-box input:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+}
+
+/* Login Button */
+.login-page .login-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #4CAF50;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.login-page .login-btn:hover {
+  background: #2e7d32;
+  transform: scale(1.03);
+}
+
+/* Forgot Password */
+.login-page .extra {
+  margin-top: 15px;
+}
+
+.login-page .extra p {
+  font-size: 14px;
+}
+
+.login-page .extra a {
+  text-decoration: none;
+  color: #4CAF50;
+  font-size: 14px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.login-page .extra a:hover {
+  color: #2e7d32;
+}
